@@ -10,8 +10,8 @@ namespace Jsyqw\Utils;
 class TreeHelper
 {
     /**
-     * @param $arr 数组
-     * @param $pid  父级值
+     * @param $arr //数组
+     * @param $pid  //父级值
      * @param string $keyName 作为主键的名称
      * @return array
      *  [{
@@ -26,7 +26,7 @@ class TreeHelper
             }]
         }]
      */
-    public static function getTree($arr, $pid, $keyName = 'pid')
+    public static function getTree($arr, $pid, $keyName = 'pid'): array
     {
         $tree = [];
         foreach ($arr as $row) {

@@ -12,8 +12,9 @@ class ValidateHelper
      * @param $phone
      * @return bool
      */
-    public static function checkPhone($phone){
-        if(preg_match("/^1[345789]{1}\d{9}$/",$phone)){
+    public static function checkPhone($phone): bool
+    {
+        if(preg_match("/^1[123456789]\d{9}$/ims",$phone)){
             return true;
         }else{
             return false;
@@ -25,7 +26,8 @@ class ValidateHelper
      * @param $email
      * @return bool
      */
-    public static function checkEmail($email){
+    public static function checkEmail($email): bool
+    {
         $pattern = "/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/";
         if(preg_match($pattern, $email)){
             return true;
@@ -55,7 +57,8 @@ class ValidateHelper
      * @param $str
      * @return bool
      */
-    public static function isJson($str){
+    public static function isJson($str): bool
+    {
         json_decode($str);
         return (json_last_error() == JSON_ERROR_NONE);
     }
